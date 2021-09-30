@@ -18,8 +18,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.headers().frameOptions().disable()
 			.and()
 				.authorizeRequests()
+				.antMatchers("/product/new").hasAuthority("ROLE_ADMIN")
 				.anyRequest().permitAll()
-				
 	        .and()
 	        	.formLogin().loginPage("/login").permitAll()
 	        .and()
