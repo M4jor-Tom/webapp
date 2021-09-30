@@ -17,13 +17,13 @@ public class ProductController {
 
 	@RequestMapping(value = "products", method = RequestMethod.GET)
 	public String list(Model model) {
-		model.addAttribute("products", productService.listAllProducts());
+		model.addAttribute("products", getProductService().listAllProducts());
 		return "products";
 	}
 
 	@RequestMapping(value = "product/show/{id}", method = RequestMethod.GET)
 	public String showProduct(@PathVariable Integer id, Model model) {
-		model.addAttribute("product", productService.getProductById(id));
+		model.addAttribute("product", getProductService().getProductById(id));
 		return "productshow";
 	}
 
@@ -41,7 +41,7 @@ public class ProductController {
 
 	@RequestMapping(value = "product", method = RequestMethod.POST)
 	public String saveProduct(Product product) {
-		productService.saveProduct(product);
+		getProductService().saveProduct(product);
 		return "redirect:/product/show/" + product.getId();
 	}
 
@@ -56,7 +56,7 @@ public class ProductController {
 
 	@RequestMapping(value = "product/delete/{id}", method = RequestMethod.DELETE)
 	public String delete(@PathVariable Integer id) {
-		productService.deleteProduct(id);
+		getProductService().deleteProduct(id);
 		return "redirect:/products";
 	}
 }
