@@ -29,13 +29,19 @@ public class ProductController {
 
 	@RequestMapping(value = "product/edit/{id}", method = RequestMethod.GET)
 	public String edit(@PathVariable Integer id, Model model) {
-		model.addAttribute("product", getProductService().getProductById(id));
+		model.addAttribute(
+				"product",
+				getProductService().getProductById(id)	//#TODO: new ProductForm(...)
+			);
 		return "productform";
 	}
 
 	@RequestMapping(value = "product/new", method = RequestMethod.GET)
 	public String newProduct(Model model) {
-		model.addAttribute("product", new Product());
+		model.addAttribute(
+				"product",
+				new Product()	//#TODO: new ProductForm()
+			);
 		return "productform";
 	}
 
