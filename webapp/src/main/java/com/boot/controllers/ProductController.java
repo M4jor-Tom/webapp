@@ -29,7 +29,7 @@ public class ProductController {
 
 	@RequestMapping(value = "product/edit/{id}", method = RequestMethod.GET)
 	public String edit(@PathVariable Integer id, Model model) {
-		model.addAttribute("product", new ProductForm());
+		model.addAttribute("product", getProductService().getProductById(id));
 		return "productform";
 	}
 
