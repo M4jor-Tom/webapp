@@ -14,7 +14,7 @@ public class IndexController {
 	}
 
 	// Login form
-	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/login", "/logout"}, method = RequestMethod.GET)
 	public String login() {
 		return "login";
 	}
