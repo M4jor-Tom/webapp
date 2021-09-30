@@ -18,8 +18,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.headers().frameOptions().disable()
 			.and()
 				.authorizeRequests()
-				.antMatchers("/", "/console/*").permitAll()
 				.anyRequest().permitAll()
+				
 	        .and()
 	        	.formLogin().loginPage("/login").permitAll()
 	        .and()
