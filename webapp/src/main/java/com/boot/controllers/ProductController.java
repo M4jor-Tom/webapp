@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.boot.entities.Product;
+import com.boot.forms.ProductForm;
 import com.boot.service.ProductService;
 
 @Controller
@@ -29,7 +30,7 @@ public class ProductController {
      public String edit(@PathVariable Integer id, Model model){
     	 model.addAttribute(
     			 "product",
-    			 null	//new ProductForm()
+    			 new ProductForm()
     		);
     	 return "productform";
      }
