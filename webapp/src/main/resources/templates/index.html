@@ -1,28 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<link
-	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-	rel="stylesheet" media="screen" />
-
-<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-
-<link href="../static/css/boot.css" th:href="@{css/boot.css}"
-	rel="stylesheet" media="screen" />
-
+<html>
 <head lang="en">
+    <title>Spring boot Web app</title>
+<!--     Inclusion d'un fragment, uniquement visible quand executé par spring -->
+<!--     La mise en commentaire permet de faire afficher la page dans le browser sans erreur -->
 
-<title>Spring boot Web app</title>
-
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
-	<img alt="boots" src="images/boots.jpg" width="300" 
-		th:src="@{images/boots.jpg}"/>
-	<h1>Hello</h1>
-	<h2>My app</h2>
-	<div class="container"></div>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/menu :: header"></th:block> /*/-->
+</div>
 </body>
 </html>
