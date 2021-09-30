@@ -22,26 +22,22 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public Iterable<Product> listAllProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return getProductRepository().findAll();
 	}
 
 	@Override
 	public Product getProductById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return getProductRepository().findById(id).get();
 	}
 
 	@Override
 	public Product saveProduct(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		return getProductRepository().save(product);
 	}
 
 	@Override
 	public void deleteProduct(Integer id) {
-		// TODO Auto-generated method stub
-		
+		getProductRepository().deleteById(id);
 	}
 
 }
