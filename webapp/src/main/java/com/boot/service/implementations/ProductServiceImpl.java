@@ -1,10 +1,11 @@
-package com.boot.service;
+package com.boot.service.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.boot.entities.Product;
 import com.boot.repositories.ProductRepository;
+import com.boot.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService{
