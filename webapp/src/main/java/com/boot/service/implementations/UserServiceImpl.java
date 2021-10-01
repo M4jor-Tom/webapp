@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.boot.entities.User;
 import com.boot.repositories.UserRepository;
 import com.boot.service.UserService;
 
+@Service
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
