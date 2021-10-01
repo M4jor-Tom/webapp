@@ -1,5 +1,7 @@
 package com.boot.service.implementations;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,23 +24,22 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public Iterable<Product> listAllProducts() {
-		return getProductRepository().findAll();
+	public List<Product> listAll() {
+		return (List<Product>) getProductRepository().findAll();
 	}
 
 	@Override
-	public Product getProductById(Integer id) {
+	public Product getById(Integer id) {
 		return getProductRepository().findById(id).get();
 	}
 
 	@Override
-	public Product saveProduct(Product product) {
+	public Product saveOrUpdate(Product product) {
 		return getProductRepository().save(product);
 	}
 
 	@Override
-	public void deleteProduct(Integer id) {
+	public void delete(Integer id) {
 		getProductRepository().deleteById(id);
 	}
-
 }

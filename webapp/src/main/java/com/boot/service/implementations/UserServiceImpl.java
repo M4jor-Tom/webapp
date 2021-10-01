@@ -1,5 +1,7 @@
 package com.boot.service.implementations;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.boot.entities.User;
@@ -20,23 +22,22 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public Iterable<User> listAllUsers() {
-		return getUserRepository().findAll();
+	public List<User> listAll() {
+		return (List<User>) getUserRepository().findAll();
 	}
 
 	@Override
-	public User getUserById(Integer id) {
+	public User getById(Integer id) {
 		return getUserRepository().findById(id).get();
 	}
 
 	@Override
-	public User saveUser(User user) {
+	public User saveOrUpdate(User user) {
 		return getUserRepository().save(user);
 	}
 
 	@Override
-	public void deleteUser(Integer id) {
+	public void delete(Integer id) {
 		getUserRepository().deleteById(id);
 	}
-
 }
