@@ -26,7 +26,7 @@
 	                        <a
 	                        	href="#"
 	                        	th:href="@{/product/new}"
-	                        	sec:authorize="hasRole('ROLE_ADMIN')"
+	                        	sec:authorize="hasAuthority('ADMIN')"
 	                        >Create Product
 	                        </a>
                         </li>
