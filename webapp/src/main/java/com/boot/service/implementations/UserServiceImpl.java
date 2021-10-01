@@ -5,15 +5,27 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.boot.entities.User;
 import com.boot.repositories.UserRepository;
 import com.boot.service.UserService;
+import com.boot.service.security.EncryptionService;
 
 @Service
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
+	private EncryptionService encryptionService;
+
+	private EncryptionService getEncryptionService() {
+		return encryptionService;
+	}
+
+	@Autowired
+	private void setEncryptionService(EncryptionService encryptionService) {
+		this.encryptionService = encryptionService;
+	}
 
 	private UserRepository getUserRepository() {
 		return userRepository;
@@ -35,10 +47,14 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User saveOrUpdate(User user) {
-		return getUserRepository().save(user);
-	}
-
+    public User saveOrUpdate(User domainObject) {
+        if(domainObject.getPassword() != null){
+            domainObject.setEncryptedPassword(getEncryptionService().encryptString(domainObject.getPassword()));
+        }
+        return getUserRepository().save(domainObject);
+    }
+	
+	@Transactional
 	@Override
 	public void delete(Integer id) {
 		getUserRepository().deleteById(id);
