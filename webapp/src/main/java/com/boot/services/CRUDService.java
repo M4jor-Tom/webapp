@@ -1,4 +1,4 @@
-package com.boot.service;
+package com.boot.services;
 
 import java.util.List;
 

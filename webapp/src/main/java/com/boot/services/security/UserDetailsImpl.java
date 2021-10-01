@@ -1,4 +1,4 @@
-package com.boot.service.security;
+package com.boot.services.security;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

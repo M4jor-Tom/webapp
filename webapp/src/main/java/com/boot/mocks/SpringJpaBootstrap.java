@@ -15,9 +15,9 @@ import com.boot.entities.Product;
 import com.boot.entities.Role;
 import com.boot.entities.User;
 import com.boot.repositories.ProductRepository;
-import com.boot.service.ProductService;
-import com.boot.service.RoleService;
-import com.boot.service.UserService;
+import com.boot.services.ProductService;
+import com.boot.services.RoleService;
+import com.boot.services.UserService;
 
 import javassist.NotFoundException;
 

@@ -1,4 +1,4 @@
-package com.boot.service.implementations;
+package com.boot.services.implementations;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.boot.entities.Role;
 import com.boot.repositories.RoleRepository;
-import com.boot.service.RoleService;
+import com.boot.services.RoleService;
 
 import javassist.NotFoundException;
 

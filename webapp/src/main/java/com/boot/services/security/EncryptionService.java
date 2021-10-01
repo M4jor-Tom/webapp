@@ -1,4 +1,4 @@
-package com.boot.service.security;
+package com.boot.services.security;
 
 public interface EncryptionService {
     String encryptString(String input);
