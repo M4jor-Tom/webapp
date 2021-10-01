@@ -31,7 +31,9 @@
 	                        </a>
                         </li>
                         <li>
-                			<input  type="submit" value="Sign Out"/>
+                        	<form class="form-horizontal" th:action="@{/logout}" method="post">
+                				<input type="submit" th:action="@{/logout}" method="post" value="Sign Out"/>
+                			</form>
                 		</li>
                     </ul>
 
