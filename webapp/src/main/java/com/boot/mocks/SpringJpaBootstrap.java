@@ -110,9 +110,11 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
     private void assignUsersToUserRole() {
     	//Assign "user" role to "user" user
     	try {
-			getUserService().findByUsername("user").addRole(
+			User user = getUserService().findByUsername("user");
+			user.addRole(
 					getRoleService().findRoleByName("USER")
 			);
+			getUserService().saveOrUpdate(user);
 		} catch (UsernameNotFoundException e) {
 			getLog().warn(e.getMessage());
 		} catch (NotFoundException e) {
@@ -123,9 +125,11 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
     private void assignUsersToAdminRole() {
     	//Assign "admin" role to "admin" user
     	try {
-			getUserService().findByUsername("admin").addRole(
+			User user = getUserService().findByUsername("admin");
+			user.addRole(
 					getRoleService().findRoleByName("ADMIN")
 			);
+			getUserService().saveOrUpdate(user);
 		} catch (UsernameNotFoundException e) {
 			getLog().warn(e.getMessage());
 		} catch (NotFoundException e) {
