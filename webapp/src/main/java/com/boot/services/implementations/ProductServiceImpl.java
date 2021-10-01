@@ -1,4 +1,4 @@
-package com.boot.service.implementations;
+package com.boot.services.implementations;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.boot.entities.Product;
 import com.boot.repositories.ProductRepository;
-import com.boot.service.ProductService;
+import com.boot.services.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService{

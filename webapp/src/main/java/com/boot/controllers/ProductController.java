@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.boot.entities.Product;
 import com.boot.forms.ProductForm;
-import com.boot.service.ProductService;
+import com.boot.services.ProductService;
 
 @Controller
 public class ProductController {

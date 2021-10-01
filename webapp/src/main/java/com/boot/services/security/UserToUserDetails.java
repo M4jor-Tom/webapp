@@ -1,5 +1,5 @@
 
-package com.boot.service.security;
+package com.boot.services.security;
 
 import java.util.ArrayList;
 import java.util.Collection;

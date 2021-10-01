@@ -1,4 +1,4 @@
-package com.boot.service.security;
+package com.boot.services.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.boot.entities.User;
-import com.boot.service.UserService;
+import com.boot.services.UserService;
 
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {

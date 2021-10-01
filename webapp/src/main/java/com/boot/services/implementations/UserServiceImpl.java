@@ -1,4 +1,4 @@
-package com.boot.service.implementations;
+package com.boot.services.implementations;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.boot.entities.User;
 import com.boot.repositories.UserRepository;
-import com.boot.service.UserService;
-import com.boot.service.security.EncryptionService;
+import com.boot.services.UserService;
+import com.boot.services.security.EncryptionService;
 
 @Service
 public class UserServiceImpl implements UserService {

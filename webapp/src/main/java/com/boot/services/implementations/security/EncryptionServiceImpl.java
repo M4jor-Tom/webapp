@@ -1,10 +1,10 @@
-package com.boot.service.implementations.security;
+package com.boot.services.implementations.security;
 
 import org.jasypt.util.password.StrongPasswordEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.boot.service.security.EncryptionService;
+import com.boot.services.security.EncryptionService;
 
 @Service
 public class EncryptionServiceImpl implements EncryptionService {
