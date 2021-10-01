@@ -15,6 +15,7 @@ import com.boot.entities.Product;
 import com.boot.entities.Role;
 import com.boot.entities.User;
 import com.boot.repositories.ProductRepository;
+import com.boot.service.ProductService;
 import com.boot.service.RoleService;
 import com.boot.service.UserService;
 
@@ -23,19 +24,19 @@ import javassist.NotFoundException;
 @Component
 public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
-    private ProductRepository productRepository;
+    private ProductService productService;
     private UserService userService;
     private RoleService roleService;
 
     private Logger log = LoggerFactory.getLogger(SpringJpaBootstrap.class);
 
-    public ProductRepository getProductRepository() {
-		return productRepository;
+    public ProductService getProductService() {
+		return productService;
 	}
 
     @Autowired
-	public void setProductRepository(ProductRepository productRepository) {
-		this.productRepository = productRepository;
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
 	}
 
 	public UserService getUserService() {
@@ -75,7 +76,7 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
         shirt.setPrice(18.95f);
         shirt.setImageUrl("https://www.vision-naire.com/wp-content/uploads/2016/11/T-SHIRT-V-150x150.jpg");
         shirt.setProductId("235268845711068308");
-        getProductRepository().save(shirt);
+        getProductService().saveOrUpdate(shirt);
 
         log.info("Saved Shirt - id: " + shirt.getId());
 
@@ -84,7 +85,7 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
         pant.setPrice(120.9f);
         pant.setImageUrl("https://www.vision-naire.com/wp-content/uploads/2020/06/jogging-visionnaire-2-100x100.jpg");
         pant.setProductId("168639393495335947");
-        getProductRepository().save(pant);
+        getProductService().saveOrUpdate(pant);
 
         log.info("Saved Mug - id:" + pant.getId());
     }
