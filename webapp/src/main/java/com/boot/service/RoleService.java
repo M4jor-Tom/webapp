@@ -2,6 +2,8 @@ package com.boot.service;
 
 import com.boot.entities.Role;
 
-public interface RoleService extends CRUDService<Role> {
+import javassist.NotFoundException;
 
+public interface RoleService extends CRUDService<Role> {
+	Role findRoleByName(String rolename) throws NotFoundException;
 }

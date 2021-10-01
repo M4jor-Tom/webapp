@@ -8,6 +8,8 @@ import com.boot.entities.Role;
 import com.boot.repositories.RoleRepository;
 import com.boot.service.RoleService;
 
+import javassist.NotFoundException;
+
 public class RoleServiceImpl implements RoleService {
 
 	private RoleRepository roleRepository;
@@ -39,5 +41,18 @@ public class RoleServiceImpl implements RoleService {
 	@Override
 	public void delete(Integer id) {
 		getRoleRepository().deleteById(id);
+	}
+
+	@Override
+	public Role findRoleByName(String rolename) throws NotFoundException {
+		for(Role role: getRoleRepository().findAll())
+		{
+			if(role.getRole().equalsIgnoreCase(rolename))
+			{
+				return role;
+			}
+		}
+		
+		throw new NotFoundException("role: " + rolename);
 	}
 }
