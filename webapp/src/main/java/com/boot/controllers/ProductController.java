@@ -29,9 +29,10 @@ public class ProductController {
 
 	@RequestMapping(value = "product/edit/{id}", method = RequestMethod.GET)
 	public String edit(@PathVariable Integer id, Model model) {
+		Product product = getProductService().getById(id);
 		model.addAttribute(
-				"product",
-				getProductService().getById(id)	//#TODO: new ProductForm(...)
+				"productform",
+				new ProductForm(product)
 			);
 		return "productform";
 	}
@@ -39,8 +40,8 @@ public class ProductController {
 	@RequestMapping(value = "product/new", method = RequestMethod.GET)
 	public String newProduct(Model model) {
 		model.addAttribute(
-				"product",
-				new Product()	//#TODO: new ProductForm()
+				"productform",
+				new ProductForm()
 			);
 		return "productform";
 	}
