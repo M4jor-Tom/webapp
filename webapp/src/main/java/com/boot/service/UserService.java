@@ -1,9 +1,9 @@
 package com.boot.service;
 
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import com.boot.entities.User;
 
-import javassist.NotFoundException;
-
 public interface UserService extends CRUDService<User> {
-	User findByUsername(String username) throws NotFoundException;
+	User findByUsername(String username) throws UsernameNotFoundException;
 }

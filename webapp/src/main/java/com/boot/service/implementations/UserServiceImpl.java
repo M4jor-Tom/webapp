@@ -3,12 +3,11 @@ package com.boot.service.implementations;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.boot.entities.User;
 import com.boot.repositories.UserRepository;
 import com.boot.service.UserService;
-
-import javassist.NotFoundException;
 
 public class UserServiceImpl implements UserService {
 
@@ -44,7 +43,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User findByUsername(String username) throws NotFoundException {
+	public User findByUsername(String username) throws UsernameNotFoundException {
 		for(User user: getUserRepository().findAll())
 		{
 			if(user.getUsername().equalsIgnoreCase(username))
@@ -53,6 +52,6 @@ public class UserServiceImpl implements UserService {
 			}
 		}
 		
-		throw new NotFoundException("user:" + username);
+		throw new UsernameNotFoundException("user: " + username);
 	}
 }
