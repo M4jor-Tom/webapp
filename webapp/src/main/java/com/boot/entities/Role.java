@@ -20,9 +20,19 @@ public class Role extends AbstractDomainClass {
     @JoinTable
     // ~ defaults to @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "role_id"),
     //     inverseJoinColumns = @joinColumn(name = "user_id"))
-    private List<User> users = new ArrayList<>();
+    private List<User> users;
+    
+    public Role() {
+    	this("", new ArrayList<>());
+    }
+    
+    public Role(String role, List<User> users) {
+		super();
+		setRole(role);
+		setUsers(users);
+	}
 
-    public String getRole() {
+	public String getRole() {
         return role;
     }
 
