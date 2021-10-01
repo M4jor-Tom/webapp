@@ -26,12 +26,14 @@
 	                        <a
 	                        	href="#"
 	                        	th:href="@{/product/new}"
-	                        	sec:authorize="hasRole('ROLE_ADMIN')"
+	                        	sec:authorize="hasAuthority('ADMIN')"
 	                        >Create Product
 	                        </a>
                         </li>
                         <li>
-                			<input  type="submit" value="Sign Out"/>
+                        	<form class="form-horizontal" th:action="@{/logout}" method="post">
+                				<input type="submit" th:action="@{/logout}" method="post" value="Sign Out"/>
+                			</form>
                 		</li>
                     </ul>
 
