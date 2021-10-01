@@ -70,6 +70,6 @@ public class UserServiceImpl implements UserService {
 			}
 		}
 		
-		throw new UsernameNotFoundException("user: " + username);
+		throw new UsernameNotFoundException("User not found: " + username);
 	}
 }

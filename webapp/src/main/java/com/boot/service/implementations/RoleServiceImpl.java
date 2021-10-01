@@ -55,6 +55,6 @@ public class RoleServiceImpl implements RoleService {
 			}
 		}
 		
-		throw new NotFoundException("role: " + rolename);
+		throw new NotFoundException("Role not found: " + rolename);
 	}
 }
