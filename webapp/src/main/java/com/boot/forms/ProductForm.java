@@ -1,5 +1,7 @@
 package com.boot.forms;
 
+import com.boot.entities.Product;
+
 public class ProductForm {
 
     private String productId;
@@ -7,7 +9,30 @@ public class ProductForm {
     private String imageUrl;
     private float price;
     
-    public String getDescription() {
+    public ProductForm()
+    {
+    	this("", "", "", (float)0.0);
+    }
+    
+    public ProductForm(Product product)
+    {
+    		this(
+    			product.getProductId(),
+    			product.getDescription(),
+    			product.getImageUrl(),
+    			product.getPrice()
+    		);
+    }
+    
+    public ProductForm(String productId, String description, String imageUrl, float price) {
+		super();
+		setProductId(productId);
+		setDescription(description);
+		setImageUrl(imageUrl);
+		setPrice(price);
+	}
+
+	public String getDescription() {
         return description;
     }
     public void setDescription(String description) {
