@@ -8,6 +8,8 @@ import com.boot.entities.User;
 import com.boot.repositories.UserRepository;
 import com.boot.service.UserService;
 
+import javassist.NotFoundException;
+
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
@@ -39,5 +41,18 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void delete(Integer id) {
 		getUserRepository().deleteById(id);
+	}
+
+	@Override
+	public User findByUsername(String username) throws NotFoundException {
+		for(User user: getUserRepository().findAll())
+		{
+			if(user.getUsername().equalsIgnoreCase(username))
+			{
+				return user;
+			}
+		}
+		
+		throw new NotFoundException("user:" + username);
 	}
 }
