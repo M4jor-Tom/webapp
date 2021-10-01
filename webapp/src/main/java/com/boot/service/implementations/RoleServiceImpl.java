@@ -3,6 +3,7 @@ package com.boot.service.implementations;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.boot.entities.Role;
 import com.boot.repositories.RoleRepository;
@@ -10,6 +11,7 @@ import com.boot.service.RoleService;
 
 import javassist.NotFoundException;
 
+@Service
 public class RoleServiceImpl implements RoleService {
 
 	private RoleRepository roleRepository;
