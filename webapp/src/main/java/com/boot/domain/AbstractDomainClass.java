@@ -22,13 +22,26 @@ abstract public class AbstractDomainClass implements DomainObject {
 
     private Date dateCreated;
     private Date lastUpdated;
+    
+    public AbstractDomainClass()
+    {
+    	super();
+    }
 
-    @Override
+    private AbstractDomainClass(Integer id, Integer version, Date dateCreated, Date lastUpdated) {
+		super();
+		setId(id);
+		setVersion(version);
+		setDateCreated(dateCreated);
+		setLastUpdated(lastUpdated);
+	}
+
+	@Override
     public Integer getId() {
         return this.id;
     }
 
-    @Override
+	@Override
     public void setId(Integer id) {
         this.id = id;
     }
@@ -45,9 +58,17 @@ abstract public class AbstractDomainClass implements DomainObject {
         return dateCreated;
     }
 
+    private void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
     public Date getLastUpdated() {
         return lastUpdated;
     }
+
+	private void setLastUpdated(Date lastUpdated) {
+		this.lastUpdated = lastUpdated;
+	}
 
     //Insures that the date is updated at each UPDATE command on database
     @PreUpdate
