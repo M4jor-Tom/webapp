@@ -2,7 +2,9 @@ package com.boot.services;
 
 import java.util.List;
 
-public interface CRUDService<T> {
+import com.boot.domain.AbstractDomainClass;
+
+public interface CRUDService<T extends AbstractDomainClass> {
     List<?> listAll();
 
     T getById(Integer id);
