@@ -28,14 +28,6 @@ abstract public class AbstractDomainClass implements DomainObject {
     	super();
     }
 
-    private AbstractDomainClass(Integer id, Integer version, Date dateCreated, Date lastUpdated) {
-		super();
-		setId(id);
-		setVersion(version);
-		setDateCreated(dateCreated);
-		setLastUpdated(lastUpdated);
-	}
-
 	@Override
     public Integer getId() {
         return this.id;
