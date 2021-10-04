@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.boot.domain.DomainObject;
 
-public interface IController<T extends DomainObject> {
+public interface EntityController<T extends DomainObject> {
 	public String list(Model model);
 
 	public String show(@PathVariable Integer id, Model model);

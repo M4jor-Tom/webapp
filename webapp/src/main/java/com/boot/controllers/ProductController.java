@@ -13,7 +13,7 @@ import com.boot.forms.ProductForm;
 import com.boot.services.ProductService;
 
 @Controller
-public class ProductController implements IController<Product> {
+public class ProductController implements EntityController<Product> {
 	private ProductService productService;
 
 	@RequestMapping(value = "products", method = RequestMethod.GET)
