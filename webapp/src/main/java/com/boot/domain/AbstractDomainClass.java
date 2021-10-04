@@ -74,9 +74,9 @@ abstract public class AbstractDomainClass implements DomainObject {
     @PreUpdate
     @PrePersist
     public void updateTimeStamps() {
-        lastUpdated = new Date();
-        if (dateCreated==null) {
-            dateCreated = new Date();
+        setLastUpdated(new Date());
+        if (getDateCreated() == null) {
+            setDateCreated(new Date());
         }
     }
 }
