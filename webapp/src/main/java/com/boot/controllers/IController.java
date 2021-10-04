@@ -3,9 +3,9 @@ package com.boot.controllers;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.boot.domain.AbstractDomainClass;
+import com.boot.domain.DomainObject;
 
-public interface IController<T extends AbstractDomainClass> {
+public interface IController<T extends DomainObject> {
 	public String list(Model model);
 
 	public String show(@PathVariable Integer id, Model model);
@@ -14,7 +14,7 @@ public interface IController<T extends AbstractDomainClass> {
 
 	public String newObject(Model model);
 
-	public String save(AbstractDomainClass object);
+	public String save(DomainObject domainObject);
 
 	public String delete(@PathVariable Integer id);
 }
