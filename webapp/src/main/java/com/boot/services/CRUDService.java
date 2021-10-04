@@ -9,7 +9,7 @@ public interface CRUDService<T extends AbstractDomainClass> {
 
     T getById(Integer id);
 
-    T saveOrUpdate(T domainObject);
+    T saveOrUpdate(T abstractDomainClass);
 
     void delete(Integer id);
 }
