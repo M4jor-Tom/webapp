@@ -1,10 +1,6 @@
 package com.boot.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Version;
 
 import com.boot.domain.AbstractDomainClass;
 
