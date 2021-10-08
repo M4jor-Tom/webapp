@@ -19,10 +19,15 @@
 	</properties>
 	
 	<repositories>
-		<repository>
+		<!-- <repository>
 		    <id>jitpack.io</id>
 		    <url>https://jitpack.io</url>
-		</repository>
+		</repository> -->
+   		<repository>
+    		<id>github</id>
+    		<name>GitHub M4jor-Tom Apache Maven Packages</name>
+    		<url>https://maven.pkg.github.com/M4jor-Tom/CrudService</url>
+    	</repository>
 	</repositories>
 	
 	<dependencies>
@@ -102,9 +107,9 @@
             <version>3.0.3</version>
         </dependency>
         <dependency>
-	    	<groupId>com.github.M4jor-Tom</groupId>
-	    	<artifactId>CrudService</artifactId>
-		    <version>0.0.1</version>
+	    	<groupId>com.example</groupId>
+	    	<artifactId>crud-service</artifactId>
+		    <version>0.0.1-SNAPSHOT</version>
 		</dependency>
         <dependency>
 	    	<groupId>com.github.M4jor-Tom</groupId>
