@@ -3,9 +3,9 @@ package com.boot.controllers;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.boot.domain.DomainObject;
+import jpaentitor.entities.Primable;
 
-public interface EntityController<T extends DomainObject> {
+public interface EntityController<T extends Primable> {
 	public String list(Model model);
 
 	public String show(@PathVariable Integer id, Model model);
@@ -14,7 +14,7 @@ public interface EntityController<T extends DomainObject> {
 
 	public String newObject(Model model);
 
-	public String save(DomainObject domainObject);
+	public String save(Primable primable);
 
 	public String delete(@PathVariable Integer id);
 }

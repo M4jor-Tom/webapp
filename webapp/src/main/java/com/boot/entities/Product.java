@@ -2,10 +2,10 @@ package com.boot.entities;
 
 import javax.persistence.Entity;
 
-import com.boot.domain.AbstractDomainClass;
+import jpaentitor.entities.AbstractEntity;
 
 @Entity
-public class Product extends AbstractDomainClass {
+public class Product extends AbstractEntity {
     private String productId;
     private String description;
     private String imageUrl;

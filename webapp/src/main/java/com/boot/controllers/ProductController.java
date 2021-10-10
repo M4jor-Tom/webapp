@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.boot.domain.DomainObject;
 import com.boot.entities.Product;
 import com.boot.forms.ProductForm;
 import com.boot.services.ProductService;
+
+import jpaentitor.entities.Primable;
 
 @Controller
 public class ProductController implements EntityController<Product> {
@@ -48,9 +49,9 @@ public class ProductController implements EntityController<Product> {
 	}
 
 	@RequestMapping(value = "product", method = RequestMethod.POST)
-	public String save(DomainObject domainObject) {
-		getProductService().saveOrUpdate((Product)domainObject);
-		return "redirect:/product/show/" + domainObject.getId();
+	public String save(Primable primable) {
+		getProductService().saveOrUpdate((Product)primable);
+		return "redirect:/product/show/" + primable.getId();
 	}
 
 	private ProductService getProductService() {
