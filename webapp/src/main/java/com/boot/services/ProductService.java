@@ -2,7 +2,7 @@ package com.boot.services;
 
 import com.boot.entities.Product;
 
-import crudservice.CrudService;
+import crudity.services.CrudService;
 
 public interface ProductService extends CrudService<Product> {
 
