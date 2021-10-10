@@ -11,6 +11,7 @@ import com.boot.entities.Product;
 import com.boot.forms.ProductForm;
 import com.boot.services.ProductService;
 
+import entitycontroller.controllers.EntityController;
 import jpaentitor.entities.Primable;
 
 @Controller
