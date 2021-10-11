@@ -95,6 +95,27 @@
 			<artifactId>jasypt-spring-boot-starter</artifactId>
 			<version>3.0.3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.M4jor-Tom</groupId>
+			<artifactId>crudity</artifactId>
+			<version>0.0.21</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/dependencies/Crudity-0.0.21.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.M4jor-Tom</groupId>
+			<artifactId>jpa-entitor</artifactId>
+			<version>0.0.2</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/dependencies/JpaEntitor-0.0.2.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.M4jor-Tom</groupId>
+			<artifactId>entity-controller</artifactId>
+			<version>0.1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/dependencies/EntityController-0.1.0.jar</systemPath>
+		</dependency>
 	</dependencies>
 
 	<build>
