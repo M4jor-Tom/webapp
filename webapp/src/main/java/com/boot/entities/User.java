@@ -2,14 +2,14 @@ package com.boot.entities;
 
 import javax.persistence.*;
 
-import com.boot.domain.AbstractDomainClass;
+import jpaentitor.entities.AbstractEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
-public class User extends AbstractDomainClass {
+public class User extends AbstractEntity {
 
     private String username;
 

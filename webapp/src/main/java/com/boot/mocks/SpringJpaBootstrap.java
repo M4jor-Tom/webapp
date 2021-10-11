@@ -1,7 +1,6 @@
 package com.boot.mocks;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Component;
 import com.boot.entities.Product;
 import com.boot.entities.Role;
 import com.boot.entities.User;
-import com.boot.repositories.ProductRepository;
 import com.boot.services.ProductService;
 import com.boot.services.RoleService;
 import com.boot.services.UserService;

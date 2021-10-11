@@ -5,14 +5,14 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-import com.boot.domain.AbstractDomainClass;
+import jpaentitor.entities.AbstractEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
-public class Role extends AbstractDomainClass {
+public class Role extends AbstractEntity {
 
     private String role;
 

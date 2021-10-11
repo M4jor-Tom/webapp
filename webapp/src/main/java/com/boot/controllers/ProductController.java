@@ -11,8 +11,11 @@ import com.boot.entities.Product;
 import com.boot.forms.ProductForm;
 import com.boot.services.ProductService;
 
+import entitycontroller.controllers.EntityController;
+import jpaentitor.entities.Primable;
+
 @Controller
-public class ProductController {
+public class ProductController implements EntityController<Product> {
 	private ProductService productService;
 
 	@RequestMapping(value = "products", method = RequestMethod.GET)
@@ -22,7 +25,7 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "product/show/{id}", method = RequestMethod.GET)
-	public String showProduct(@PathVariable Integer id, Model model) {
+	public String show(@PathVariable Integer id, Model model) {
 		model.addAttribute("product", getProductService().getById(id));
 		return "productshow";
 	}
@@ -38,7 +41,7 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "product/new", method = RequestMethod.GET)
-	public String newProduct(Model model) {
+	public String newObject(Model model) {
 		model.addAttribute(
 				"productform",
 				new ProductForm()
@@ -47,9 +50,9 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "product", method = RequestMethod.POST)
-	public String saveProduct(Product product) {
-		getProductService().saveOrUpdate(product);
-		return "redirect:/product/show/" + product.getId();
+	public String save(Primable primable) {
+		getProductService().saveOrUpdate((Product)primable);
+		return "redirect:/product/show/" + primable.getId();
 	}
 
 	private ProductService getProductService() {
